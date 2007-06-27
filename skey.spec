@@ -4,7 +4,7 @@
 Summary:	S/Key suite of programs
 Name:		skey
 Version:	1.1.5
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	BSD
 Group:		System/Libraries
 Source:		%{name}-%{version}.tar.bz2
@@ -83,7 +83,7 @@ perl -pi -e "s|/etc/skeykeys|%{_sysconfdir}/%{name}/skeykeys|g" skeyprune.pl
 
 %build
 export SENDMAIL="%{_sbindir}/sendmail"
-export CFLAGS="%{optflags} -DSKEY_HASH_DEFAULT=1"
+export CFLAGS="$RPM_OPT_FLAGS -DSKEY_HASH_DEFAULT=1"
 
 %configure \
     --prefix=%{_prefix} \
