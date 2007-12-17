@@ -18,7 +18,6 @@ Patch4:		skey-1.1.5-otp.diff
 BuildRequires:	libcrack-devel
 # if not using BuildConflicts here the binaries could link against installed libs
 BuildConflicts:	skey-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This is an S/Key implementation ported from OpenBSD.
