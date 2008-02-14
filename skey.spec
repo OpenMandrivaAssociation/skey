@@ -7,6 +7,7 @@ Version:	1.1.5
 Release:	%mkrel 7
 License:	BSD
 Group:		System/Libraries
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		skey-1.1.5-gentoo.diff
 Patch1:		skey-login_name_max.diff
