@@ -4,10 +4,9 @@
 Summary:	S/Key suite of programs
 Name:		skey
 Version:	1.1.5
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	BSD
 Group:		System/Libraries
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		skey-1.1.5-gentoo.diff
 Patch1:		skey-login_name_max.diff
@@ -19,6 +18,7 @@ Patch4:		skey-1.1.5-otp.diff
 BuildRequires:	libcrack-devel
 # if not using BuildConflicts here the binaries could link against installed libs
 BuildConflicts:	skey-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This is an S/Key implementation ported from OpenBSD.
@@ -156,5 +156,3 @@ rm -rf %{buildroot}
 %files -n %{libname}-static-devel
 %defattr(-,root,root)
 %attr(0644,root,root) %{_libdir}/libskey.a
-
-
