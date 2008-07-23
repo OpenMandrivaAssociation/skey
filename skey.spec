@@ -4,7 +4,7 @@
 Summary:	S/Key suite of programs
 Name:		skey
 Version:	1.1.5
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	BSD
 Group:		System/Libraries
 Source:		%{name}-%{version}.tar.bz2
