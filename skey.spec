@@ -156,3 +156,48 @@ rm -rf %{buildroot}
 %files -n %{libname}-static-devel
 %defattr(-,root,root)
 %attr(0644,root,root) %{_libdir}/libskey.a
+
+
+%changelog
+* Tue Sep 08 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.1.5-10mdv2010.0
++ Revision: 433919
+- rebuild
+
+* Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.1.5-9mdv2009.0
++ Revision: 242691
+- rebuild
+
+* Tue Jul 22 2008 Oden Eriksson <oeriksson@mandriva.com> 1.1.5-8mdv2009.0
++ Revision: 240157
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - fix no-buildroot-tag
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Wed Jun 27 2007 Andreas Hasenack <andreas@mandriva.com> 1.1.5-7mdv2008.0
++ Revision: 45103
+- rebuild with new rpm-mandriva-setup (-fstack-protector)
+
+
+* Sun Mar 11 2007 Oden Eriksson <oeriksson@mandriva.com> 1.1.5-6mdv2007.1
++ Revision: 141289
+- fix deps
+
+* Wed Mar 07 2007 Oden Eriksson <oeriksson@mandriva.com> 1.1.5-5mdv2007.1
++ Revision: 134499
+- Import skey
+
+* Wed Jun 28 2006 Oden Eriksson <oeriksson@mandriva.com> 1.1.5-5mdv2007.0
+- rebuild
+
+* Sun Nov 06 2005 Oden Eriksson <oeriksson@mandriva.com> 1.1.5-4mdk
+- added a lot of gentoo changes
+
+* Fri Oct 21 2005 Olivier Thauvin <nanardon@mandriva.org> 1.1.5-3mdk
+- rebuild
+- I can't find the project on the net :\
+
