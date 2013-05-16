@@ -4,10 +4,10 @@
 Summary:	S/Key suite of programs
 Name:		skey
 Version:	1.1.5
-Release:	%mkrel 10
+Release:	11
 License:	BSD
 Group:		System/Libraries
-Source:		%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.bz2
 Patch0:		skey-1.1.5-gentoo.diff
 Patch1:		skey-login_name_max.diff
 Patch2:		skey-1.1.5-fPIC.patch
@@ -18,7 +18,6 @@ Patch4:		skey-1.1.5-otp.diff
 BuildRequires:	libcrack-devel
 # if not using BuildConflicts here the binaries could link against installed libs
 BuildConflicts:	skey-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This is an S/Key implementation ported from OpenBSD.
@@ -90,11 +89,9 @@ export CFLAGS="$RPM_OPT_FLAGS -DSKEY_HASH_DEFAULT=1"
     --sysconfdir=%{_sysconfdir}/%{name} \
     --libdir=%{_libdir}
 
-make
+make CC=%{__cc}
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
 
 install -d %{buildroot}%{_sbindir}
@@ -119,19 +116,7 @@ chmod 644 %{buildroot}%{_libdir}/libskey.a
 # cleanup
 rm -f %{buildroot}%{_bindir}/libskey.a
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc CHANGES INSTALL README
 %attr(0600,root,root) %config(noreplace) %{_sysconfdir}/%{name}/skeykeys
 %attr(4755,root,root) %{_bindir}/skeyinit
@@ -145,16 +130,13 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %files -n %{libname}
-%defattr(-,root,root)
 %attr(0755,root,root) %{_libdir}/*.so.*
 
 %files -n %{libname}-devel
-%defattr(-,root,root)
 %attr(0644,root,root) %{_includedir}/*
 %attr(0755,root,root) %{_libdir}/*.so
 
 %files -n %{libname}-static-devel
-%defattr(-,root,root)
 %attr(0644,root,root) %{_libdir}/libskey.a
 
 
