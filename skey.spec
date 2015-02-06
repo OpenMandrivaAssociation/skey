@@ -4,7 +4,7 @@
 Summary:	S/Key suite of programs
 Name:		skey
 Version:	1.1.5
-Release:	11
+Release:	12
 License:	BSD
 Group:		System/Libraries
 Source0:	%{name}-%{version}.tar.bz2
