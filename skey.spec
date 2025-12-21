@@ -15,6 +15,11 @@ Patch3:		skey-1.1.5-bind-now.patch
 Patch4:		skey-1.1.5-otp.diff
 # This url is wrong, but it is impossible to find it else where...
 #URL: ftp://thumper.bellcore.com/pub/nmh/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libcrack-devel
 # if not using BuildConflicts here the binaries could link against installed libs
 BuildConflicts:	skey-devel
